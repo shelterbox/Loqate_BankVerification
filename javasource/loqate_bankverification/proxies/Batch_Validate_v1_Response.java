@@ -4,12 +4,8 @@
 
 package loqate_bankverification.proxies;
 
-public class Batch_Validate_v1_Response
+public class Batch_Validate_v1_Response extends loqate_bankverification.proxies.Response
 {
-	private final com.mendix.systemwideinterfaces.core.IMendixObject batch_Validate_v1_ResponseMendixObject;
-
-	private final com.mendix.systemwideinterfaces.core.IContext context;
-
 	/**
 	 * Internal name of this entity
 	 */
@@ -22,13 +18,9 @@ public class Batch_Validate_v1_Response
 
 	protected Batch_Validate_v1_Response(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject batch_Validate_v1_ResponseMendixObject)
 	{
-		if (batch_Validate_v1_ResponseMendixObject == null)
-			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		super(context, batch_Validate_v1_ResponseMendixObject);
 		if (!com.mendix.core.Core.isSubClassOf("Loqate_BankVerification.Batch_Validate_v1_Response", batch_Validate_v1_ResponseMendixObject.getType()))
 			throw new java.lang.IllegalArgumentException("The given object is not a Loqate_BankVerification.Batch_Validate_v1_Response");
-
-		this.batch_Validate_v1_ResponseMendixObject = batch_Validate_v1_ResponseMendixObject;
-		this.context = context;
 	}
 
 	/**
@@ -53,53 +45,6 @@ public class Batch_Validate_v1_Response
 	{
 		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return loqate_bankverification.proxies.Batch_Validate_v1_Response.initialize(context, mendixObject);
-	}
-
-	/**
-	 * Commit the changes made on this proxy object.
-	 */
-	public final void commit() throws com.mendix.core.CoreException
-	{
-		com.mendix.core.Core.commit(context, getMendixObject());
-	}
-
-	/**
-	 * Commit the changes made on this proxy object using the specified context.
-	 */
-	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
-	{
-		com.mendix.core.Core.commit(context, getMendixObject());
-	}
-
-	/**
-	 * Delete the object.
-	 */
-	public final void delete()
-	{
-		com.mendix.core.Core.delete(context, getMendixObject());
-	}
-
-	/**
-	 * Delete the object using the specified context.
-	 */
-	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		com.mendix.core.Core.delete(context, getMendixObject());
-	}
-	/**
-	 * @return the IMendixObject instance of this proxy for use in the Core interface.
-	 */
-	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
-	{
-		return batch_Validate_v1_ResponseMendixObject;
-	}
-
-	/**
-	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
-	 */
-	public final com.mendix.systemwideinterfaces.core.IContext getContext()
-	{
-		return context;
 	}
 
 	@java.lang.Override
@@ -134,6 +79,7 @@ public class Batch_Validate_v1_Response
 	 * @return String GUID from this object, format: ID_0000000000
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
+	@java.lang.Override
 	@java.lang.Deprecated
 	public java.lang.String getGUID()
 	{

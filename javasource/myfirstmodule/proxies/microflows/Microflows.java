@@ -14,10 +14,10 @@ import com.mendix.systemwideinterfaces.core.IContext;
 public class Microflows
 {
 	// These are the microflows for the MyFirstModule module
-	public static void tEST_BatchValidateV1(IContext context)
+	public static boolean tEST_BatchValidateV1(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("MyFirstModule.TEST_BatchValidateV1").withParams(params).execute(context);
+		return (java.lang.Boolean) Core.microflowCall("MyFirstModule.TEST_BatchValidateV1").withParams(params).execute(context);
 	}
 	public static void tEST_InteractiveRetrieveBySortcodeV1(IContext context)
 	{

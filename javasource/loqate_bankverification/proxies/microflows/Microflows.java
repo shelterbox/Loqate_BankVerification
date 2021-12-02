@@ -54,4 +54,11 @@ public class Microflows
 		params.put("Request", _request == null ? null : _request.getMendixObject());
 		return (java.lang.Boolean) Core.microflowCall("Loqate_BankVerification.InternationalInteractiveValidateV1").withParams(params).execute(context);
 	}
+	public static void sUB_ProcessSoapFault(IContext context, loqate_bankverification.proxies.Response _response, system.proxies.HttpResponse _httpResponse)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("Response", _response == null ? null : _response.getMendixObject());
+		params.put("HttpResponse", _httpResponse == null ? null : _httpResponse.getMendixObject());
+		Core.microflowCall("Loqate_BankVerification.SUB_ProcessSoapFault").withParams(params).execute(context);
+	}
 }
